@@ -1,0 +1,15 @@
+id,is_part_of,material_category,material_subcategory,cataloged_name,authoritative_name,verbatim_name,dataset_code,collection_code,institution_code,locality_description,template_note
+DEMO-001,,Mineral,,Fictionite,Fictionite,,demo_minerals,DEMO-MIN,DEMO,"Invented Valley, Nowhere District, Republic of Example","Simple specimen: it has an id, no is_part_of, and nothing points at it."
+DEMO-002,,Mineral,,"Placeholderite, Exemplar, Mockstone",,,demo_minerals,DEMO-MIN,DEMO,"Mount Notreal, Nowhere District, Republic of Example","Compound specimen: three parts on one matrix. The root name goes in cataloged_name."
+,DEMO-002,Mineral,,,Placeholderite,,demo_minerals,DEMO-MIN,DEMO,,"Part record: is_part_of points at the root id, and the name goes in authoritative_name."
+,DEMO-002,Mineral,,,Exemplar,exemplar var. fictus,demo_minerals,DEMO-MIN,DEMO,,"verbatim_name is optional; use it when the label text differs from the accepted name."
+,DEMO-002,Mineral,Silicate,,Mockstone,,demo_minerals,DEMO-MIN,DEMO,,"material_subcategory is optional and shown in the parts table."
+DEMO-003,,Rock,,Sample Aggregate,,,demo_minerals,DEMO-PET,DEMO,"Quarry Zero, Nowhere District, Republic of Example","Compound specimen nested three levels deep."
+DEMO-003-A,DEMO-003,Rock,Metamorphite,,Notarockite,,demo_minerals,DEMO-PET,DEMO,,"A part that also carries an id, so it can be the parent of further parts."
+,DEMO-003-A,Mineral,,,Fauxlite,,demo_minerals,DEMO-PET,DEMO,,"Third level: is_part_of points at DEMO-003-A rather than at the root."
+,DEMO-003-A,Mineral,,,Dummynite,,demo_minerals,DEMO-PET,DEMO,,
+,DEMO-003-A,Mineral,Carbonate,,Pseudogläsit,,demo_minerals,DEMO-PET,DEMO,,"Save the file as UTF-8 so accented characters survive."
+DEMO-004,,Ore,,Imaginary Ore Assemblage,,,demo_geology,DEMO-ECON,DEMO,"Shaft Null, Nowhere District, Republic of Example","A second dataset_code appears as its own entry in the dataset filter."
+,DEMO-004,Ore,Sulfide,,Pseudo-Ore,,demo_geology,DEMO-ECON,DEMO,,
+,DEMO-004,Mineral,,,Simulacrite,,demo_geology,DEMO-ECON,DEMO,,
+,DEMO-004,Fossil,Invertebrate,,Exampleites nullus,,demo_geology,DEMO-ECON,DEMO,,"Each material_category gets its own colour in the diagram and legend."

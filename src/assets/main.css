@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Roboto Serif', 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'Roboto Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --color-canvas: #ffffff;
+  --color-surface: #f7f8f9;
+  --color-ink: #16191d;
+  --color-ink-muted: #6b7280;
+  --color-ink-faint: #9aa1a9;
+  --color-rule: #e2e5e9;
+  --color-accent: #2f7a4f;
+}
+
+@layer base {
+  :root {
+    /* Height of the sticky app header; the sidebar hangs off it. */
+    --header-h: 4rem;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Section heading above each block of the specimen profile. */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .card {
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-rule);
+    border-radius: 4px;
+  }
+
+  /* Shared table skin for every table in the profile. */
+  .profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+  }
+  .profile-table th,
+  .profile-table td {
+    border: 1px solid var(--color-rule);
+    padding: 0.4rem 0.625rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .profile-table thead th {
+    background-color: var(--color-surface);
+    font-weight: 500;
+    color: var(--color-ink-muted);
+    white-space: nowrap;
+  }
+  .profile-table tbody tr:hover {
+    background-color: #fafbfc;
+  }
+}
